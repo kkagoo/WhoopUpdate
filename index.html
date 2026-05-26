@@ -1,209 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whoop Updated Its AI. My Chores Became Workouts.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whoop Updated Its AI. My Chores Became Workouts. | Her Health Stack</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F7F4EF;
+  --paper-mid: #EDE7DC;
+  --paper-warm: #F1EBE0;
+  --ink: #1A1A1A;
+  --ink-mid: #555;
+  --ink-muted: #888;
+  --ink-faint: #AAA;
+  --rule: #E0DDD8;
+  --accent: #2D7D8A;
+  --accent-green: #2C4A3E;
+  --accent-warm: #C17F3A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.site-header {
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.site-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hero {
+  max-width: 880px;
+  margin: 72px auto 40px;
+  padding: 0 40px;
+}
+.post-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5.5vw, 58px);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--ink);
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+.post-deck {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-mid);
+  font-style: italic;
+  border-left: 3px solid var(--accent-warm);
+  padding-left: 20px;
+  max-width: 720px;
+}
+.article-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.callout {
+  border-left: 4px solid var(--ink);
+  background: var(--paper-warm);
+  padding: 24px 28px;
+  margin: 40px 0;
+}
+.callout.info { border-color: var(--accent); }
+.callout p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+.callout p strong { color: var(--ink); }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      line-height: 1.75;
-      color: #1a1a1a;
-      background: #fff;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+/* Black insights strip */
+.insights-strip {
+  background: var(--ink);
+  margin: 56px 0;
+  padding: 48px 0;
+}
+.insights-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.insights-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 28px;
+}
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 48px;
+}
+.insight-item { color: #DDD; }
+.insight-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent-warm);
+  margin-bottom: 8px;
+}
+.insight-item p { font-size: 15px; line-height: 1.6; }
+.insight-item strong { color: #fff; font-weight: 600; }
 
-    /* Title */
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 2.4rem;
-      line-height: 1.2;
-      color: #111;
-      margin-bottom: 16px;
-    }
+/* Section headers */
+.section-header {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  margin: 64px 0 24px;
+}
+.section-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--accent-warm);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
 
-    /* Deck */
-    .deck {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: #555;
-      margin-bottom: 36px;
-      line-height: 1.5;
-    }
+/* Body prose */
+.prose p {
+  margin-bottom: 1.4em;
+  color: var(--ink);
+}
+.prose p:last-child { margin-bottom: 0; }
 
-    /* Perspective box */
-    .perspective-box {
-      background: #f4f4f2;
-      border-left: 3px solid #111;
-      padding: 20px 24px;
-      margin-bottom: 40px;
-      font-size: 0.93rem;
-      color: #333;
-      line-height: 1.65;
-    }
-    .perspective-box strong {
-      font-weight: 600;
-      color: #111;
-    }
+/* FAQ callout */
+.faq-callout {
+  background: var(--paper-warm);
+  border: 1px solid #E8C98A;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--accent-green);
+  line-height: 1.65;
+}
+.faq-callout .faq-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  font-style: normal;
+  display: block;
+  margin-bottom: 10px;
+}
 
-    /* Insight strip */
-    .insight-strip {
-      border-top: 2px solid #111;
-      border-bottom: 2px solid #111;
-      padding: 24px 0;
-      margin-bottom: 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 32px;
-    }
-    .insight-item {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: #333;
-    }
-    .insight-item .num {
-      font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      color: #888;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .insight-item strong {
-      color: #111;
-      font-weight: 600;
-    }
+/* Footer */
+.footer-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+.footnote {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 40px 48px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+.footnote p { margin-bottom: 0.6em; }
 
-    /* Section headers */
-    .section-header {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #888;
-      margin-top: 52px;
-      margin-bottom: 18px;
-    }
-    .section-header span {
-      color: #111;
-    }
-
-    /* Body text */
-    p {
-      margin-bottom: 20px;
-      color: #222;
-    }
-
-    /* Pull quote / FAQ callout */
-    .callout {
-      background: #f9f9f7;
-      border-left: 3px solid #ccc;
-      padding: 16px 20px;
-      margin: 28px 0;
-      font-size: 0.95rem;
-      color: #444;
-      font-style: italic;
-    }
-
-    /* Strong inline */
-    strong { font-weight: 600; }
-
-    /* Divider */
-    hr {
-      border: none;
-      border-top: 1px solid #e0e0e0;
-      margin: 52px 0 36px;
-    }
-
-    /* Footnote */
-    .footnote {
-      font-size: 0.82rem;
-      color: #888;
-      line-height: 1.6;
-    }
-    .footnote a {
-      color: #888;
-    }
-
-    @media (max-width: 520px) {
-      h1 { font-size: 1.9rem; }
-      .insight-strip { grid-template-columns: 1fr; }
-    }
-  </style>
+@media (max-width: 720px) {
+  .hero, .article-wrap, .insights-inner, .footnote { padding-left: 22px; padding-right: 22px; }
+  .site-header { padding: 16px 22px; }
+  .insights-grid { grid-template-columns: 1fr; gap: 28px; }
+  .section-header { grid-template-columns: 1fr; gap: 6px; }
+  .section-num { display: block; }
+}
+</style>
 </head>
 <body>
 
-  <h1>Whoop Updated Its AI. My Chores Became Workouts.</h1>
-  <p class="deck">My Whoop started counting chores as workouts. The explanation was buried in a model update.</p>
+<header class="site-header">
+  <div class="site-name">Her Health Stack</div>
+</header>
 
-  <div class="perspective-box">
-    <strong>A note on perspective.</strong> I've worn Whoop for a while and written a product teardown of it on this Substack. I've been recommending it. I also build SecondRise, a perimenopause fitness app, so I pay close attention to how wearables handle the difference between real training and everything else. This is about what happens when a company moves that line without saying anything.
+<div class="hero">
+  <h1 class="post-title">Whoop Updated Its AI.<br>My Chores Became Workouts.</h1>
+  <div class="post-deck">My Whoop started counting chores as workouts. The explanation was buried in a model update.</div>
+</div>
+
+<div class="article-wrap">
+  <div class="callout info">
+    <p><strong>A note on perspective.</strong> I've worn Whoop for a while and written a product teardown of it on this Substack. I've been recommending it. I also build SecondRise, a perimenopause fitness app, so I pay close attention to how wearables handle the difference between real training and everything else. This is about what happens when a company moves that line without saying anything.</p>
+  </div>
+</div>
+
+<div class="insights-strip">
+  <div class="insights-inner">
+    <div class="insights-eyebrow">The short version</div>
+    <div class="insights-grid">
+      <div class="insight-item">
+        <div class="insight-num">01</div>
+        <p><strong>Whoop retrained its activity detection model.</strong> A May 20 blog post confirms a new AI model release. The January changelog lowered the auto-detection threshold from 15 to 10 minutes.</p>
+      </div>
+      <div class="insight-item">
+        <div class="insight-num">02</div>
+        <p><strong>Chores became named sports.</strong> Mopping: walking. Cooking: functional training. Weed-whacking: golf. Raised-bed gardening: field hockey. Picking fruit: jumping jacks.</p>
+      </div>
+      <div class="insight-item">
+        <div class="insight-num">03</div>
+        <p><strong>No in-app heads-up.</strong> Whoop has a public changelog. Finding it is not the same as knowing the model just changed what counts as your activity.</p>
+      </div>
+      <div class="insight-item">
+        <div class="insight-num">04</div>
+        <p><strong>The fix is to log manually.</strong> That is a reasonable workaround. It is a strange default for a $200/year athlete tracker.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">The Chores Became Workouts</h2>
+  </div>
+  <div class="prose">
+    <p>Last week, Whoop started logging activities I didn't do.</p>
+    <p>Mopping the floor: walking. Grocery shopping: also walking. Cooking dinner: functional training. I turned off automatic activity detection. That fixed it for me, but I wanted to know what changed.</p>
+    <p>My uncle texted me around the same time. He'd been weed-whacking and Whoop logged it as golf. He's been working on his raised garden beds and Whoop filed that as field hockey. He picked fruit from a tree and Whoop gave him credit for jumping jacks. We laughed, because what else do you do when your wearable thinks yard work is field hockey?</p>
   </div>
 
-  <div class="insight-strip">
-    <div class="insight-item">
-      <span class="num">01</span>
-      <strong>The model changed.</strong> Whoop retrained its activity detection AI and lowered its auto-detection threshold. Users weren't notified.
-    </div>
-    <div class="insight-item">
-      <span class="num">02</span>
-      <strong>Chores became activities.</strong> Mopping logged as walking. Cooking logged as functional training. Yard work logged as golf and field hockey.
-    </div>
-    <div class="insight-item">
-      <span class="num">03</span>
-      <strong>The fix is manual.</strong> Whoop's FAQ says delete the ones you don't want. That's a weak answer for a $200/year athlete tracker.
-    </div>
-    <div class="insight-item">
-      <span class="num">04</span>
-      <strong>The transparency gap.</strong> A public changelog exists. That's not the same as telling users their data is about to look different.
-    </div>
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">The Model Moved</h2>
+  </div>
+  <div class="prose">
+    <p>Whoop published a blog post on May 20 explaining how its activity detection works. The company says it "regularly re-trains" its activity detection and classification models, and that the latest release was "a step forward" in both the scale of data and the sophistication of the AI models behind workout detection. Recent improvements focus on lower-strain sustained activity, better functional-fitness detection, and fewer generic "Activity" labels.</p>
+    <p>Separately, Whoop's 2026 "What's New" page says that in January it lowered the minimum workout auto-detection duration from 15 minutes to 10. Whoop lowered the bar for what counts, then got more confident about naming it.</p>
+    <p>I didn't get an in-app heads-up. Whoop has a public changelog, but finding a changelog is not the same as knowing the model just redrew the line on what counts as your activity.</p>
+    <p>My best guess: weed-whacking looks enough like a golf swing. Bending over raised beds looks enough like field hockey. Reaching overhead for fruit looks enough like jumping jacks. That's my read, not Whoop's explanation.</p>
   </div>
 
-  <p class="section-header"><span>01</span> &nbsp;The Chores Became Workouts</p>
-
-  <p>Last week, Whoop started logging activities I didn't do.</p>
-
-  <p>Mopping the floor: walking. Grocery shopping: also walking. Cooking dinner: functional training. I turned off automatic activity detection. That fixed it for me, but I wanted to know what changed.</p>
-
-  <p>My uncle texted me around the same time. He'd been weed-whacking and Whoop logged it as golf. He's been working on his raised garden beds and Whoop filed that as field hockey. He picked fruit from a tree and Whoop gave him credit for jumping jacks. We laughed, because what else do you do when your wearable thinks yard work is field hockey?</p>
-
-  <p class="section-header"><span>02</span> &nbsp;The Model Moved</p>
-
-  <p>Whoop published a blog post on May 20 explaining how its activity detection works. The company says it "regularly re-trains" its activity detection and classification models, and that the latest release was "a step forward" in both the scale of data and the sophistication of the AI models behind workout detection. Recent improvements focus on lower-strain sustained activity, better functional-fitness detection, and fewer generic "Activity" labels.</p>
-
-  <p>Separately, Whoop's 2026 "What's New" page says that in January it lowered the minimum workout auto-detection duration from 15 minutes to 10. Whoop lowered the bar for what counts, then got more confident about naming it.</p>
-
-  <p>I didn't get an in-app heads-up. Whoop has a public changelog, but finding a changelog is not the same as knowing the model just redrew the line on what counts as your activity.</p>
-
-  <p>My best guess: weed-whacking looks enough like a golf swing. Bending over raised beds looks enough like field hockey. Reaching overhead for fruit looks enough like jumping jacks. That's my read, not Whoop's explanation.</p>
-
-  <div class="callout">
-    "Lower Strain cardiovascular activities show up. You can delete any activity you don't want logged." &mdash; Whoop FAQ
+  <div class="faq-callout">
+    <span class="faq-label">Whoop FAQ</span>
+    "Lower Strain cardiovascular activities show up. You can delete any activity you don't want logged."
   </div>
 
-  <p>"Delete the ones you don't want" is fine for a photo app. It's a weird standard for a product that asks me to plan recovery around its numbers.</p>
+  <div class="prose">
+    <p>"Delete the ones you don't want" is fine for a photo app. It's a weird standard for a product that asks me to plan recovery around its numbers.</p>
+  </div>
 
-  <p class="section-header"><span>03</span> &nbsp;Why That Matters</p>
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2 class="section-title">Why That Matters</h2>
+  </div>
+  <div class="prose">
+    <p>Whoop markets itself as an athlete tracker. I use Whoop because Strain is supposed to mean something. It's supposed to help me tell the difference between training load and life noise. Not errands plus chores plus whatever the model decided my uncle was doing with a weed-whacker.</p>
+    <p>That matters if you actually use the numbers. A fake walk here, fake field hockey there, and suddenly your week looks more athletic than it was.</p>
+    <p>I turned off auto-detection. I'll log manually. But I shouldn't have to make that choice because a model was retrained and deployed without any real communication about what was shifting. Whoop says it released updated models and its January changelog confirms it lowered the detection threshold from 15 to 10 minutes. I can't say exactly when those changes hit my account, but what I saw fits.</p>
+    <p>Whoop is good at a lot of things. This is the part companies still seem to underestimate: when an AI model changes inside a health product, users feel it in their own history. My data started telling a slightly different story. Whoop never really told me why. At $200+ a year, I expect the model to know the difference between a workout and a Tuesday.</p>
+  </div>
 
-  <p>Whoop markets itself as an athlete tracker. I use Whoop because Strain is supposed to mean something. It's supposed to help me tell the difference between training load and life noise. Not errands plus chores plus whatever the model decided my uncle was doing with a weed-whacker.</p>
+</div>
 
-  <p>That matters if you actually use the numbers. A fake walk here, fake field hockey there, and suddenly your week looks more athletic than it was.</p>
-
-  <p>I turned off auto-detection. I'll log manually. But I shouldn't have to make that choice because a model was retrained and deployed without any real communication about what was shifting. Whoop says it released updated models and its January changelog confirms it lowered the detection threshold from 15 to 10 minutes. I can't say exactly when those changes hit my account, but what I saw fits.</p>
-
-  <p>Whoop is good at a lot of things. This is the part companies still seem to underestimate: when an AI model changes inside a health product, users feel it in their own history. My data started telling a slightly different story. Whoop never really told me why. At $200+ a year, I expect the model to know the difference between a workout and a Tuesday.</p>
-
-  <hr>
-
-  <p class="footnote">Correction or clarification? Reach me at <a href="mailto:karen.kagoo@gmail.com">karen.kagoo@gmail.com</a>. Disclosure: No brand relationship with Whoop. Published May 2026.</p>
+<hr class="footer-rule">
+<div class="footnote">
+  <p>Correction or clarification? Reach me at karen.kagoo@gmail.com. Disclosure: No brand relationship with Whoop. Sources: Whoop "How WHOOP Detects and Labels Your Activities" (May 20, 2026); Whoop "2026 What's New" changelog. Published May 2026 &middot; Her Health Stack.</p>
+</div>
 
 </body>
 </html>
